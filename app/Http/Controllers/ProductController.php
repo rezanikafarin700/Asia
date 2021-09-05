@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Product\ProductRequest;
 use App\Http\Requests\StoreProductRequest;
 use App\Image;
 use App\Product;
@@ -24,8 +25,9 @@ class ProductController extends Controller
     }
 
 
-    public function add(Request $request)
+    public function add(ProductRequest $request)
     {
+
         $p = new Product();
         $p->name = $request->name; // $p->catId = $request->input('catId');      <- روش درست تر
         $p->model = $request->model;
@@ -56,9 +58,5 @@ class ProductController extends Controller
             }
         }
         return redirect()->action('ProductController@add')->with('insert', true);
-
     }
-
-
-
 }
