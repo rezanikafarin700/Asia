@@ -18,6 +18,22 @@ Route::group(['prefix' => 'products'],function (){
         'uses' => 'ProductController@add'
     ]);
 });
+Route::group(['prefix' => 'banner'],function (){
+
+    Route::get('/',[
+        'at' => 'banner.all',
+        'uses' => 'BannerController@index'
+    ]);
+    Route::get('/{id}',[
+        'at' => 'banner.show',
+        'uses' => 'BannerController@show'
+    ]);
+    Route::post('/',[
+        'at' => 'banner.add',
+        'uses' => 'BannerController@add'
+    ]);
+});
+
 
 Route::post('/images',[
    'as' => 'images',
@@ -33,9 +49,5 @@ Route::group(['prefix' => 'images'],function (){
 
 Route::post('/users',[
    'as' => 'users',
-    'uses' => 'UserController@store'
-]);
-Route::post('/admin',[
-   'as' => 'admin',
     'uses' => 'UserController@store'
 ]);

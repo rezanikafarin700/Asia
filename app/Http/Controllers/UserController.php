@@ -12,12 +12,15 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $user =  User::create([
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'type' => $request->type,
+            'api_token' => str_random(50)
         ]);
 
         return response($user,201);
     }
+
 
 }

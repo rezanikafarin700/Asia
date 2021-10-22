@@ -25,7 +25,7 @@ class ProductController extends Controller
     }
 
 
-    public function add(ProductRequest $request)
+    public function add(Request $request)
     {
 
         $p = new Product();
@@ -57,6 +57,7 @@ class ProductController extends Controller
                 $i++;
             }
         }
+
         return redirect()->action('ProductController@add')->with('insert', true);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::post('avatar',function (){
     }
     return back();
 });
+
+
+Route::get('/mail',[
+    'as' => 'mail',
+   'uses' => 'EmailController@mail'
+]);

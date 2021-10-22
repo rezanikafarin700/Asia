@@ -68,7 +68,6 @@ class Handler extends ExceptionHandler
 //            ],$code);
 //        }
 
-
         if($request->wantsJson()){
             /**  @var ValidationException $exception */
             $exception = $this->prepareException($exception);

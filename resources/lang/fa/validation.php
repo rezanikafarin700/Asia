@@ -147,6 +147,7 @@ return [
 
     'attributes' => [
         'name' => 'نام محصول',
+        'username' => 'نام کاربری',
         'model' => 'مدل',
         'size' => 'اندازه',
         'price' => 'قیمت',
