@@ -27,6 +27,6 @@ class AuthController extends Controller
     {
        $user =  auth()->guard('api')->user();
        $user->logout();
-       return $user;
+       return response()->json($user,200);
     }
 }
