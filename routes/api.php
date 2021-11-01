@@ -59,3 +59,7 @@ Route::group(['prefix' => 'users'], function () {
         'uses' => 'UserController@store'
     ]);
 });
+Route::post('/login',[
+    'as' => "login",
+    'uses' => 'AuthController@login'
+]);
