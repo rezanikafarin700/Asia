@@ -15,7 +15,8 @@ Route::group(['prefix' => 'products'], function () {
     ]);
     Route::post('/', [
         'at' => 'products.add',
-        'uses' => 'ProductController@add'
+        'uses' => 'ProductController@add',
+         'middleware' => 'auth:api'
     ]);
 });
 Route::group(['prefix' => 'banner'], function () {
@@ -30,7 +31,8 @@ Route::group(['prefix' => 'banner'], function () {
     ]);
     Route::post('/', [
         'at' => 'banner.add',
-        'uses' => 'BannerController@add'
+        'uses' => 'BannerController@add',
+        'middleware' => 'auth:api'
     ]);
 });
 

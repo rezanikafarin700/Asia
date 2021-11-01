@@ -31,8 +31,8 @@ class AuthController extends Controller
             ],401);
         }
 
-
-        //        $user = User::
+// کدهای بالا کدهای بهتری هستند ولی این کدها قابل فهم تر هستند
+//        $user = User::
 //        where('email',$request->email)->first();
 //        if(!empty($user)) {
 //            $check = Hash::check($request->password,$user->password);
