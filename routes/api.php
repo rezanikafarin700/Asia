@@ -53,7 +53,7 @@ Route::group(['prefix' => 'users'], function () {
         'as' => 'users.all',
         'uses' => 'UserController@index'
     ]);
-
+    //Register
     Route::post('/', [
         'as' => 'users',
         'uses' => 'UserController@store'
@@ -62,4 +62,10 @@ Route::group(['prefix' => 'users'], function () {
 Route::post('/login',[
     'as' => "login",
     'uses' => 'AuthController@login'
+]);
+
+Route::post('/logout',[
+    'as' => 'logout',
+    'uses' => 'AuthController@logout',
+    'middleware' => 'auth:api'
 ]);

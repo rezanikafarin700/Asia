@@ -34,4 +34,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function logout()
+    {
+        $this->api_token = null;
+        $this->save();
+        return $this;
+    }
 }

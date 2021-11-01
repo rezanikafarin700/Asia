@@ -12,8 +12,6 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-
-
         $user = User::
         where([
             'email' => $request->email,
@@ -23,5 +21,12 @@ class AuthController extends Controller
         $user->save();
         return response()->json($user, 200);
 
+    }
+
+    public function logout()
+    {
+       $user =  auth()->guard('api')->user();
+       $user->logout();
+       return $user;
     }
 }
