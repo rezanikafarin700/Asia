@@ -41,4 +41,11 @@ class User extends Authenticatable
         $this->save();
         return $this;
     }
+
+    public function generateToken()
+    {
+        $this->api_token = str_random(50);
+        $this->save();
+        return $this;
+    }
 }
