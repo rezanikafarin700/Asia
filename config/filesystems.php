@@ -59,6 +59,12 @@ return [
             'root' => public_path('images/banners'),
         ],
 
+
+        'article' => [
+            'driver' => 'local',
+            'root' => public_path('images/articles'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

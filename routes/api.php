@@ -32,9 +32,31 @@ Route::group(['prefix' => 'banner'], function () {
     Route::post('/', [
         'at' => 'banner.add',
         'uses' => 'BannerController@add',
-        'middleware' => 'auth:api'
+//        'middleware' => 'auth:api'
     ]);
 });
+
+
+
+Route::group(['prefix' => 'article'], function () {
+
+    Route::get('/', [
+        'at' => 'article.all',
+        'uses' => 'ArticleController@index'
+    ]);
+    Route::get('/{id}', [
+        'at' => 'article.show',
+        'uses' => 'ArticleController@show'
+    ]);
+    Route::post('/', [
+        'at' => 'article.add',
+        'uses' => 'ArticleController@add',
+//        'middleware' => 'auth:api'
+    ]);
+});
+
+
+
 
 
 Route::post('/images', [

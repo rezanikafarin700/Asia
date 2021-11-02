@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Banner\BannerRequest;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Banner;
@@ -20,9 +21,7 @@ class BannerController extends Controller
         return $banners;
     }
 
-
-
-    public function add(Request $request)
+    public function add(BannerRequest $request)
     {
 //        dd($request);
 
