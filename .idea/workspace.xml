@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b8ae4276-d1eb-4187-93c1-cfc0f5afb0bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,13 +149,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\Asia\resources\views" />
-      <recent name="D:\xampp\htdocs\Asia\resources\lang" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\Asia\app\Http\Requests\Product" />
       <recent name="D:\xampp\htdocs\Asia\app\Http\Requests\User" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\Asia\resources\views" />
+      <recent name="D:\xampp\htdocs\Asia\resources\lang" />
     </key>
   </component>
   <component name="RunManager">
@@ -252,6 +255,12 @@
       <workItem from="1635739163139" duration="18385000" />
       <workItem from="1635798178592" duration="10244000" />
       <workItem from="1635914194094" duration="698000" />
+      <workItem from="1636386518564" duration="4084000" />
+      <workItem from="1636438950935" duration="555000" />
+      <workItem from="1636611634496" duration="2362000" />
+      <workItem from="1636643319026" duration="2123000" />
+      <workItem from="1636791374598" duration="1372000" />
+      <workItem from="1636986974715" duration="1618000" />
     </task>
     <servers />
   </component>
@@ -259,17 +268,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1635798470634">
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636386762725">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1635798470634" />
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1636386762725" />
     <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1633378211733">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1633378211733" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1635759963811">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1636987995844">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1635759963811" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1636987995844" />
   </component>
 </project>

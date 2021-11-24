@@ -34,6 +34,19 @@ Route::group(['prefix' => 'banner'], function () {
         'uses' => 'BannerController@add',
 //        'middleware' => 'auth:api'
     ]);
+
+
+    Route::post('/update/{id}', [
+        'at' => 'banner.update',
+        'uses' => 'BannerController@update'
+    ]);
+    Route::delete('/{id}', [
+        'at' => 'banner.delete',
+        'uses' => 'BannerController@delete'
+    ]);
+
+
+
 });
 
 
@@ -51,6 +64,65 @@ Route::group(['prefix' => 'article'], function () {
     Route::post('/', [
         'at' => 'article.add',
         'uses' => 'ArticleController@add',
+//        'middleware' => 'auth:api'
+    ]);
+
+    Route::post('/update/{id}', [
+        'at' => 'article.update',
+        'uses' => 'ArticleController@update'
+    ]);
+    Route::delete('/{id}', [
+        'at' => 'article.delete',
+        'uses' => 'ArticleController@delete'
+    ]);
+
+});
+Route::group(['prefix' => 'article'], function () {
+
+    Route::get('/', [
+        'at' => 'article.all',
+        'uses' => 'ArticleController@index'
+    ]);
+    Route::get('/{id}', [
+        'at' => 'article.show',
+        'uses' => 'ArticleController@show'
+    ]);
+    Route::post('/', [
+        'at' => 'article.add',
+        'uses' => 'ArticleController@add',
+//        'middleware' => 'auth:api'
+    ]);
+    Route::post('/update/{id}', [
+        'at' => 'article.update',
+        'uses' => 'ArticleController@update'
+    ]);
+    Route::delete('/{id}', [
+        'at' => 'article.delete',
+        'uses' => 'ArticleController@delete'
+    ]);
+
+});
+Route::group(['prefix' => 'footer'], function () {
+
+    Route::get('/', [
+        'at' => 'footer.all',
+        'uses' => 'FooterController@index'
+    ]);
+    Route::get('/{id}', [
+        'at' => 'footer.show',
+        'uses' => 'FooterController@show'
+    ]);
+    Route::post('/update/{id}', [
+        'at' => 'footer.update',
+        'uses' => 'FooterController@update'
+    ]);
+    Route::delete('/{id}', [
+        'at' => 'footer.delete',
+        'uses' => 'FooterController@delete'
+    ]);
+    Route::post('/', [
+        'at' => 'footer.add',
+        'uses' => 'FooterController@add',
 //        'middleware' => 'auth:api'
     ]);
 });
@@ -75,7 +147,8 @@ Route::group(['prefix' => 'users'], function () {
 
     Route::get('/', [
         'as' => 'users.all',
-        'uses' => 'UserController@index'
+        'uses' => 'UserController@index',
+        'middleware' => 'auth:api'
     ]);
     //Register
     Route::post('/', [

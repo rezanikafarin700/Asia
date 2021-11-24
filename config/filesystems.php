@@ -58,6 +58,10 @@ return [
             'driver' => 'local',
             'root' => public_path('images/banners'),
         ],
+        'footer' => [
+            'driver' => 'local',
+            'root' => public_path('images/footers'),
+        ],
 
 
         'article' => [

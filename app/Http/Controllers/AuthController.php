@@ -23,7 +23,7 @@ class AuthController extends Controller
         if(auth()->check()) {
             $user = auth()->user()->generateToken();
 
-            return $user;
+            return response()->json($user,201);
         }
         else{
             return response()->json([
@@ -39,7 +39,7 @@ class AuthController extends Controller
 //            dd($check);
 //            $user->api_token = str_random(50);
 //            $user->save();
-//            return response()->json($user, 200);
+//            return response()->json($user, 201);
 //        }
 //        return response()->json([
 //            'error' => 'Not Found'
