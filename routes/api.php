@@ -16,7 +16,15 @@ Route::group(['prefix' => 'products'], function () {
     Route::post('/', [
         'at' => 'products.add',
         'uses' => 'ProductController@add',
-         'middleware' => 'auth:api'
+        //  'middleware' => 'auth:api'
+    ]);
+    Route::post('update/{id}', [
+        'at' => 'products.update',
+        'uses' => 'ProductController@update'
+    ]);
+    Route::delete('/{id}', [
+        'at' => 'products.delete',
+        'uses' => 'ProductController@delete'
     ]);
 });
 Route::group(['prefix' => 'banner'], function () {
@@ -130,11 +138,17 @@ Route::group(['prefix' => 'footer'], function () {
 
 
 
+Route::group(['prefix'=> 'images'],function(){
+    Route::get('/{id}', [
+        'as' => 'images.show',
+        'uses' => 'ImageController@show'
+    ]);
+    Route::post('/', [
+        'as' => 'images',
+        'uses' => 'ImageController@create'
+    ]);
 
-Route::post('/images', [
-    'as' => 'images',
-    'uses' => 'ImageController@create'
-]);
+});
 
 Route::group(['prefix' => 'images'], function () {
     Route::get('/{productId}', [

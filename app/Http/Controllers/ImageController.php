@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Image;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Routing\RouteCollection;
+use Illuminate\Database\Eloquent\Builder;
 
 class ImageController extends Controller
 {
@@ -26,6 +29,12 @@ class ImageController extends Controller
                 $image->save();
             }
         }
+    }
+
+    public function show($id)
+    {
+        $images = Image::where('productId',$id)->get();
+        return response()->json($images);
     }
 
 

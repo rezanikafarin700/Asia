@@ -9,6 +9,8 @@ use App\Product;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Filesystem\Filesystem;
+
 
 
 class ProductController extends Controller
@@ -60,4 +62,106 @@ class ProductController extends Controller
 
         return redirect()->action('ProductController@add')->with('insert', true);
     }
+
+    public function update(Request $request,$id){
+        if ($request->mainImage == "undefined") {
+        $product = Product::findOrFail($id);
+            if ($product) {
+                $data = $request->only([
+                     'name',
+                     'model',
+                     'size',
+                     'price',
+                     'discount',
+                     'code',
+                     'material',
+                     'description',
+                    ]);
+                $product->update($data);
+            }
+            if ($request->hasFile('images')) {
+                $i = 0;
+                $images = request()->file('images');
+                foreach ($images as $img) {
+                    $image = new Image();
+                    $path = $img->store("{$product->id}",'product');
+                    $name = explode('/', $path)[1];
+                    if ($i === 0) {
+                        $product->image = $name;
+                        $product->save();
+                    } else {
+                        $image->name = $name;
+                        $image->productId = $product->id;
+                        $image->save();
+                    }
+                    $i++;
+                }
+            }
+            return response($product, 202);
+        }
+        else{
+            $product = Product::findOrFail($id);
+            if ($product) {
+                $image_path = '/images/products/' . $product->id . '/' . $product->image;
+                if (file_exists(public_path($image_path))) {
+                    unlink(public_path($image_path));
+                }
+                $data = $request->only([
+                    'name',
+                    'model',
+                    'size',
+                    'price',
+                    'discount',
+                    'code',
+                    'material',
+                    'image',
+                    'description',
+                   ]);
+                $product->update($data);
+                $path = $request->mainImage->store("{$product->id}", 'product');
+                $name = explode('/', $path)[1];
+                $product->image = $name;
+                $product->save();
+            }
+            if ($request->hasFile('images')) {
+                $i = 0;
+                $images = request()->file('images');
+                foreach ($images as $img) {
+                    $image = new Image();
+                    $path = $img->store("{$product->id}",'product');
+                    $name = explode('/', $path)[1];
+                    if ($i === 0) {
+                        $product->image = $name;
+                        $product->save();
+                    } else {
+                        $image->name = $name;
+                        $image->productId = $product->id;
+                        $image->save();
+                    }
+                    $i++;
+                }
+            }
+
+            return response($product, 202);
+
+        }
+    }
+
+    public function delete($id)
+    {
+        $product =  Product::findOrFail($id);
+        if ($product) {
+            $image_path = '/images/products/' . $product->id;
+            if (is_dir(public_path($image_path))) {
+                $file = new Filesystem;
+                $file->cleanDirectory(public_path($image_path));
+                rmdir(public_path($image_path));
+            }
+            $product->delete();
+            return response(['مقاله مورد نظر پاک شد'], 200);
+        } else {
+            return response(['رکورد مورد نظر یافت نشد'], 404);
+        }
+    }
+
 }

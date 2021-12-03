@@ -36,7 +36,7 @@ class FooterController extends Controller
         return response()->json($article, 200);
     }
 
-    public function update(Request $request, $id)
+    public function update(BannerRequest $request, $id)
     {
         if ($request->image == "undefined") {
             $article = Footer::findOrFail($id);
