@@ -46,7 +46,7 @@ class ProductController extends Controller
             $images = request()->file('images');
             foreach ($images as $img) {
                 $image = new Image();
-                $path = $img->store("{$p->id}",'product');
+                $path = $img->store("{$p->id}", 'product');
                 $name = explode('/', $path)[1];
                 if ($i === 0) {
                     $p->image = $name;
@@ -63,43 +63,47 @@ class ProductController extends Controller
         return redirect()->action('ProductController@add')->with('insert', true);
     }
 
-    public function update(Request $request,$id){
+    public function update(Request $request, $id)
+    {
+        if ($request->hasAny('deletedOfOldImages')) {
+            $deleted = $request->input('deletedOfOldImages');
+            foreach ($deleted as $d) {
+                $image_path = '/images/products/' . $id . '/' . $d;
+                if (file_exists(public_path($image_path))) {
+                    unlink(public_path($image_path));
+                }
+                Image::where('productId', $id)->where('name', $d)->delete();
+            }
+        }
+
         if ($request->mainImage == "undefined") {
-        $product = Product::findOrFail($id);
+            $product = Product::findOrFail($id);
             if ($product) {
                 $data = $request->only([
-                     'name',
-                     'model',
-                     'size',
-                     'price',
-                     'discount',
-                     'code',
-                     'material',
-                     'description',
-                    ]);
+                    'name',
+                    'model',
+                    'size',
+                    'price',
+                    'discount',
+                    'code',
+                    'material',
+                    'description',
+                ]);
                 $product->update($data);
             }
             if ($request->hasFile('images')) {
-                $i = 0;
                 $images = request()->file('images');
                 foreach ($images as $img) {
                     $image = new Image();
-                    $path = $img->store("{$product->id}",'product');
+                    $path = $img->store("{$product->id}", 'product');
                     $name = explode('/', $path)[1];
-                    if ($i === 0) {
-                        $product->image = $name;
-                        $product->save();
-                    } else {
-                        $image->name = $name;
-                        $image->productId = $product->id;
-                        $image->save();
-                    }
-                    $i++;
+                    $image->name = $name;
+                    $image->productId = $product->id;
+                    $image->save();
                 }
             }
             return response($product, 202);
-        }
-        else{
+        } else {
             $product = Product::findOrFail($id);
             if ($product) {
                 $image_path = '/images/products/' . $product->id . '/' . $product->image;
@@ -116,7 +120,7 @@ class ProductController extends Controller
                     'material',
                     'image',
                     'description',
-                   ]);
+                ]);
                 $product->update($data);
                 $path = $request->mainImage->store("{$product->id}", 'product');
                 $name = explode('/', $path)[1];
@@ -124,26 +128,18 @@ class ProductController extends Controller
                 $product->save();
             }
             if ($request->hasFile('images')) {
-                $i = 0;
                 $images = request()->file('images');
                 foreach ($images as $img) {
                     $image = new Image();
-                    $path = $img->store("{$product->id}",'product');
+                    $path = $img->store("{$product->id}", 'product');
                     $name = explode('/', $path)[1];
-                    if ($i === 0) {
-                        $product->image = $name;
-                        $product->save();
-                    } else {
-                        $image->name = $name;
-                        $image->productId = $product->id;
-                        $image->save();
-                    }
-                    $i++;
+                    $image->name = $name;
+                    $image->productId = $product->id;
+                    $image->save();
                 }
             }
 
             return response($product, 202);
-
         }
     }
 
@@ -163,5 +159,4 @@ class ProductController extends Controller
             return response(['رکورد مورد نظر یافت نشد'], 404);
         }
     }
-
 }
