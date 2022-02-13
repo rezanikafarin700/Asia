@@ -34,6 +34,10 @@ class ProductController extends Controller
         $p->name = $request->name; // $p->catId = $request->input('catId');      <- روش درست تر
         $p->model = $request->model;
         $p->size = $request->size;
+        $p->height = $request->height;
+        $p->weight = $request->weight;
+        $p->gate = $request->gate;
+        $p->manikin = $request->manikin;
         $p->price = $request->price;
         $p->discount = $request->discount;
         $p->code = $request->code;

@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b8ae4276-d1eb-4187-93c1-cfc0f5afb0bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/articles/1/YPSvveVwaoqWiUuox5D03U0Nhol2vAcgZct694W0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/articles/2/mHPRWOEh2SnzUEOUSrwyhA6edRR41orvSSnJykyT.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/articles/3/vjz1IhMwgvy7ydaQ8dzP4D39fjw0DpiZZMVVQjBn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/articles/4/8Hvwzut9xKo9UldJVEHzkUw6cXuWdG4wDNVLZ2sv.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/banners/1/Mxs5YGqGnCvp6GeDJI6HAoj5JslU5Mb69hTYGN2z.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/footers/69/ZjanUFblZn4RSZ7BwiVinlei1zqgGfuFVgzijnI6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/footers/69/ozJdOpfCSf1uSJ7SiGYyNqrcCYhRDhuOMcMntcaz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/98/97YrXzGihtJzXblwLIaommwayzlu8oQ9IroqQJBm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/98/MB8rR4UZjlCW16Jbhn0eS4vvsHmFBlRbz4hYK52h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/98/MnFqUri4NxMMmFpXQqZ9yglLJlagwPFEc7NFTbKt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/98/fw48R9yuFfIIaZ3EOVr4oB5IpNbaE2h6c1QBqUck.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/98/uO3dbg7FeOwQqzfoz9skCVZ5JRaRZZgTQGziuyM5.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,6 +270,7 @@
       <workItem from="1636643319026" duration="2123000" />
       <workItem from="1636791374598" duration="1372000" />
       <workItem from="1636986974715" duration="1618000" />
+      <workItem from="1644421692749" duration="3898000" />
     </task>
     <servers />
   </component>
