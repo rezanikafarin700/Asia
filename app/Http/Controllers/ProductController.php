@@ -42,6 +42,7 @@ class ProductController extends Controller
         $p->discount = $request->discount;
         $p->code = $request->code;
         $p->material = $request->material;
+        $p->link = $request->link;
         $p->description = $request->description;
         $p->save();
 
@@ -95,6 +96,7 @@ class ProductController extends Controller
                     'discount',
                     'code',
                     'material',
+                    'link',
                     'description',
                 ]);
                 $product->update($data);
@@ -130,6 +132,7 @@ class ProductController extends Controller
                     'discount',
                     'code',
                     'material',
+                    'link',
                     'image',
                     'description',
                 ]);
